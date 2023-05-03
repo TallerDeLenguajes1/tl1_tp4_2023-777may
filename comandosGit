@@ -9,5 +9,10 @@ git checkout -b "verRamaACrear"     git branch "nuevaRama"
                                     git checkout "ramaQueQuieroVer" 
 git merge "ramaQueSeUniráALaActual" -m "" 
 $ git branch -d ramaABorrar
+$ git push --all
 
 gitk --all 
+
+
+shift+insert
+ctrl+insert

@@ -65,7 +65,6 @@ void main ()
         num = menu();
     }
     freeMemoria(&TareasPendientes, &TareasRealizadas);
-    
 }
 
 
@@ -74,7 +73,6 @@ void inicializar(Nodo **lista)
 {
     *lista = NULL;
 }
-
 void cargarTareas(Nodo ** lista)
 {
     Nodo *nuevo;
@@ -127,6 +125,7 @@ void comprobarEstadoTareas(Nodo ** pendiente, Nodo ** hecho)
                 *hecho = pHecho;
             
         }else{
+            anterior = aux;
             aux = aux->Siguiente;
         }
     }
@@ -224,7 +223,7 @@ void freeMemoria(Nodo ** pendiente, Nodo ** hecho)
         free(aux->T.Descripcion);
         free(aux);
     }
-    free(hecho);   
+    free(*hecho);   
 
     while(*pendiente)
     {
@@ -233,5 +232,5 @@ void freeMemoria(Nodo ** pendiente, Nodo ** hecho)
         free(aux->T.Descripcion);
         free(aux);
     }
-    free(pendiente);    
+    free(*pendiente);    
 }
